@@ -1,10 +1,32 @@
 <mat-toolbar color="primary">
 
     <mat-toolbar-row>
-      <span>Third Line</span>
-      <span class="example-spacer"></span>
-      <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
-      <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>
+      <button mat-icon-button>
+        <mat-icon>Menu</mat-icon>
+      </button>
+
+      <span>APP LOGO</span>
+      <div fxflex fxLayout="row" fxLayoutAlign="flex-end">
+
+        <ul fxLayout="row" fxLayoutGap="20px">
+
+          <li>
+            <button mat-icon-button>
+              <mat-icon>settings</mat-icon>
+            </button>
+          </li>
+
+          <li>
+            <button mat-icon-button>
+              <mat-icon>Help</mat-icon>
+            </button>
+          </li>
+
+          <li>Menu</li>
+          
+        </ul>
+
+      </div>
     </mat-toolbar-row>
     
   </mat-toolbar>
