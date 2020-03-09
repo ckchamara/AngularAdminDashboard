@@ -2,11 +2,11 @@
 
     <mat-toolbar-row>
       <button mat-icon-button>
-        <mat-icon>Menu</mat-icon>
+        <mat-icon>menu</mat-icon>
       </button>
 
       <span>APP LOGO</span>
-      <div fxflex fxLayout="row" fxLayoutAlign="flex-end">
+      <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
 
         <ul fxLayout="row" fxLayoutGap="20px">
 
@@ -18,11 +18,22 @@
 
           <li>
             <button mat-icon-button>
-              <mat-icon>Help</mat-icon>
+              <mat-icon>help_outlire</mat-icon>
             </button>
           </li>
 
-          <li>Menu</li>
+          <li>
+            <button mat-button [matMenuTriggerFor]="menu">
+              <mat-icon>person_outline</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>exit_to_app</mat-icon>
+                Sign Out
+              </button>
+              <button mat-menu-item>Item 2</button>
+            </mat-menu>          
+          </li>
           
         </ul>
 
