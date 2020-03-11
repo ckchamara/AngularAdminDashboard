@@ -8,6 +8,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { MatSidenavModule, MatDividerModule, MatCardModule } from '@angular/material';
 import { from } from 'rxjs';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { DashboardService } from 'src/app/modules/dashboard.service';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatDividerModule,
     FlexLayoutModule,
     MatCardModule   
-  ] 
+  ] ,
+  providers: [
+    DashboardService
+  ]
 })
 export class DefaultModule { }

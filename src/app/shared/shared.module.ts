@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { AreaComponent } from './widget/area/area.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { CardComponent } from './widget/card/card.component';
+import { PieComponent } from './widget/pie/pie.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CardComponent } from './widget/card/card.component';
     SidebarComponent,
     AreaComponent,
     CardComponent,
+    PieComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,8 @@ import { CardComponent } from './widget/card/card.component';
     HeaderComponent,
     SidebarComponent,
     AreaComponent,
-    CardComponent
+    CardComponent,
+    PieComponent
   ]
 })
 export class SharedModule { }
