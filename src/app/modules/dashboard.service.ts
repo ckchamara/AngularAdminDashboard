@@ -7,7 +7,7 @@ export class DashboardService {
 
   constructor() { }
 
-  bigChart(){
+  bigChart() {
     return [{
           name: 'Asia',
           data: [502, 635, 809, 947, 1402, 3634, 5268]
@@ -26,11 +26,11 @@ export class DashboardService {
       }];
   }
 
-  cards(){
+  cards() {
     return [502, 635, 809, 947, 1402, 3634, 4300];
   }
 
-  pieChartOptions(){
+  pieChartOptions() {
         return  {
           chart: {
               plotBackgroundColor: null,
