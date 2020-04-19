@@ -6,15 +6,17 @@ import { RouterModule } from '@angular/router';
 import { PostsComponent } from 'src/app/modules/posts/posts.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatSidenavModule, MatDividerModule, MatCardModule } from '@angular/material';
-import { from } from 'rxjs';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardService } from 'src/app/modules/dashboard.service';
+import {MahajanaSampathaComponent} from '../../modules/mahajana-sampatha/mahajana-sampatha.component';
+import {MDBBootstrapModule} from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
     DefaultComponent,
     DashboardComponent,
-    PostsComponent
+    PostsComponent,
+    MahajanaSampathaComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { DashboardService } from 'src/app/modules/dashboard.service';
     MatSidenavModule,
     MatDividerModule,
     FlexLayoutModule,
-    MatCardModule   
+    MatCardModule,
+    MDBBootstrapModule.forRoot()
   ] ,
   providers: [
     DashboardService
