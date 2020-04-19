@@ -10,6 +10,9 @@ import { AreaComponent } from './widget/area/area.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { CardComponent } from './widget/card/card.component';
 import { PieComponent } from './widget/pie/pie.component';
+import { LottoEnterComponent } from './widget/lotto-enter/lotto-enter.component';
+import {RestserviceService} from '../services/restservice.service';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import { PieComponent } from './widget/pie/pie.component';
     SidebarComponent,
     AreaComponent,
     CardComponent,
-    PieComponent
+    PieComponent,
+    LottoEnterComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +34,8 @@ import { PieComponent } from './widget/pie/pie.component';
     MatMenuModule,
     MatListModule,
     RouterModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    ReactiveFormsModule
   ],
   exports: [
     FooterComponent,
@@ -38,7 +43,9 @@ import { PieComponent } from './widget/pie/pie.component';
     SidebarComponent,
     AreaComponent,
     CardComponent,
-    PieComponent
-  ]
+    PieComponent,
+    LottoEnterComponent
+  ],
+  providers: [RestserviceService],
 })
 export class SharedModule { }

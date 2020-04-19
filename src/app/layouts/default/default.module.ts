@@ -10,6 +10,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardService } from 'src/app/modules/dashboard.service';
 import {MahajanaSampathaComponent} from '../../modules/mahajana-sampatha/mahajana-sampatha.component';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
+import {LottoEnterComponent} from '../../shared/widget/lotto-enter/lotto-enter.component';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import {MDBBootstrapModule} from 'angular-bootstrap-md';
     DefaultComponent,
     DashboardComponent,
     PostsComponent,
-    MahajanaSampathaComponent
+    MahajanaSampathaComponent,
   ],
   imports: [
     CommonModule,
