@@ -1,25 +1,32 @@
-<form [formGroup]="myForm">
-  <div class="form-row">
-    <div class="col">
-      <input type="text" class="form-control" placeholder="letter" formControlName="letter">
+<mat-card class="lottoinput" style="background-color: aliceblue">
+  <mat-card-content>
+    <h2 class="mat-h2" style="color: rgba(0,0,0,0.60)">Enter Lottery Numbers</h2>
+    <div style="padding: 30px 10px;">
+      <form [formGroup]="myForm">
+        <div class="form-row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="letter" formControlName="letter">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="No 1"  formControlName="no1">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="No 2" formControlName="no2">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="No 3" formControlName="no3">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="No 4" formControlName="no4">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="No 5">
+          </div>
+        </div>
+        <div id="button">
+          <button mat-raised-button color="primary" (click)="buttonClick()" type="submit">Submit</button>
+        </div>
+      </form>
     </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="No 1"  formControlName="no1">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="No 2" formControlName="no2">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="No 3" formControlName="no3">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="No 4" formControlName="no4">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="No 5">
-    </div>
-  </div>
-  <div id="button">
-  <button mat-raised-button color="primary" (click)="buttonClick()" type="submit">Submit</button>
-  </div>
-</form>
+  </mat-card-content>
+</mat-card>

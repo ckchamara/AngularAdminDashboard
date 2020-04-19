@@ -6,23 +6,9 @@
 <mat-divider></mat-divider>
 <br>
 
-<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
-  <mat-card class="lottoinput" style="background-color: aliceblue">
-    <mat-card-content>
-      <h2 class="mat-h2" style="color: rgba(0,0,0,0.60)">Enter Lottery Numbers</h2>
-      <div style="padding: 20px 10px;">
-        <app-lotto-enter [lotteryOptions]="lotteryOptions"></app-lotto-enter>
-      </div>
-    </mat-card-content>
-  </mat-card>
-  <mat-card class="lottoinput" style="background-color: aliceblue">
-    <mat-card-content>
-      <h2 class="mat-h2" style="color: rgba(0,0,0,0.60)">Result Details</h2>
-      <div style="padding: 20px 10px;">
-        <!--<app-lotto-enter></app-lotto-enter>-->
-      </div>
-    </mat-card-content>
-  </mat-card>
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="15px" class="stats-cards">
+  <app-lotto-enter [lotteryOptions]="lotteryOptions" style="width: 50%"></app-lotto-enter>
+  <app-lotto-result style="width: 50%"></app-lotto-result>
 </div>
 
 <br>

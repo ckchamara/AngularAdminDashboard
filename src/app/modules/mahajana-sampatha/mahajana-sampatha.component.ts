@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Prizetable} from '../../interfaces/prizetable';
+import {LotteryComponentsService} from '../../services/sharedService/lottery-components.service';
 
 
 const ELEMENT_DATA: Prizetable[] = [
@@ -17,7 +18,9 @@ const ELEMENT_DATA: Prizetable[] = [
 @Component({
   selector: 'app-mahajana-sampatha',
   templateUrl: './mahajana-sampatha.component.html',
-  styleUrls: ['./mahajana-sampatha.component.scss']
+  styleUrls: ['./mahajana-sampatha.component.scss'],
+  providers: [LotteryComponentsService],
+  // directives: [ChildComponent, ChildSiblingComponent]
 })
 export class MahajanaSampathaComponent implements OnInit {
 

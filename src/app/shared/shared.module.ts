@@ -3,7 +3,15 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { MatDividerModule, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, MatListModule } from '@angular/material';
+import {
+  MatDividerModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatButtonModule,
+  MatMenuModule,
+  MatListModule,
+  MatCardModule
+} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
 import { AreaComponent } from './widget/area/area.component';
@@ -13,6 +21,7 @@ import { PieComponent } from './widget/pie/pie.component';
 import { LottoEnterComponent } from './widget/lotto-enter/lotto-enter.component';
 import {RestserviceService} from '../services/restservice.service';
 import {ReactiveFormsModule} from '@angular/forms';
+import { LottoResultComponent } from './widget/lotto-result/lotto-result.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +31,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     AreaComponent,
     CardComponent,
     PieComponent,
-    LottoEnterComponent
+    LottoEnterComponent,
+    LottoResultComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +45,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatListModule,
     RouterModule,
     HighchartsChartModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule
   ],
   exports: [
     FooterComponent,
@@ -44,7 +55,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     AreaComponent,
     CardComponent,
     PieComponent,
-    LottoEnterComponent
+    LottoEnterComponent,
+    LottoResultComponent
   ],
   providers: [RestserviceService],
 })
