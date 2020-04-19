@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Config} from '../../../interfaces/config';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {RestserviceService} from '../../../services/restservice.service';
@@ -12,6 +12,7 @@ export class LottoEnterComponent implements OnInit {
 
   myForm: FormGroup;
   httpclientservice: RestserviceService;
+  @Input() lotteryOptions = {};
 
   constructor(agc: RestserviceService) {
     this.httpclientservice = agc;
@@ -40,13 +41,13 @@ export class LottoEnterComponent implements OnInit {
     console.log(this.myForm.value.no2);
     console.log(this.myForm.value.no3);
     console.log(this.myForm.value.no4);
-    this.showheros();
+    this.showheros(this.lotteryOptions);
   }
 
 
-  showheros() {
+  showheros(lotteryOptions) {
     const reqBody = {
-      name: 'govisetha',
+      name: lotteryOptions.name,
       id: 321,
       positions: [
         { 1: this.myForm.value.letter },

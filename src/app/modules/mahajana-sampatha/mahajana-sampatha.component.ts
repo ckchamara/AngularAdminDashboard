@@ -21,6 +21,12 @@ const ELEMENT_DATA: Prizetable[] = [
 })
 export class MahajanaSampathaComponent implements OnInit {
 
+  lotteryOptions = {};
+
+  reqBody = {
+    name: 'govisetha',
+    id: 321
+  };
   constructor() { }
 
 
@@ -28,6 +34,7 @@ export class MahajanaSampathaComponent implements OnInit {
   dataSource = ELEMENT_DATA;
 
   ngOnInit(): void {
+    this.lotteryOptions = this.reqBody;
   }
 
 }
