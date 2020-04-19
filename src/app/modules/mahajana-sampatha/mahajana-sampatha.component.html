@@ -15,10 +15,34 @@
 <mat-divider></mat-divider>
 <br>
 
-<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
-  <div fxFlex="60">Table</div>
-  <div fxFlex ="40">
+<div class="table" style="background-color: aquamarine">
+  <div>Prize Structure</div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-  </div>
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> Level. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="pattern">
+      <th mat-header-cell *matHeaderCellDef> Pattern </th>
+      <td mat-cell *matCellDef="let element"> {{element.pattern}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="prize">
+      <th mat-header-cell *matHeaderCellDef> Prize </th>
+      <td mat-cell *matCellDef="let element"> {{element.prize}} </td>
+    </ng-container>
+
+ <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
 </div>
+
+<br>
+<mat-divider></mat-divider>
+<br>
+
+
 
