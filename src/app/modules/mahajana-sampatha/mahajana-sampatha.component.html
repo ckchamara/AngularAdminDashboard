@@ -7,8 +7,8 @@
 <br>
 
 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="15px" class="stats-cards">
-  <app-lotto-enter [lotteryOptions]="lotteryOptions" style="width: 50%"></app-lotto-enter>
-  <app-lotto-result style="width: 50%"></app-lotto-result>
+  <app-lotto-enter (myEvent)="app.showResult()" [lotteryOptions]="lotteryOptions" style="width: 50%"></app-lotto-enter>
+  <app-lotto-result #app style="width: 50%"></app-lotto-result>
 </div>
 
 <br>

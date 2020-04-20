@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Config} from '../../../interfaces/config';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {RestserviceService} from '../../../services/restservice.service';
@@ -12,6 +12,7 @@ export class LottoEnterComponent implements OnInit {
 
   myForm: FormGroup;
   httpclientservice: RestserviceService;
+  @Output() myEvent = new EventEmitter();
   @Input() lotteryOptions = {};
 
   constructor(agc: RestserviceService) {
@@ -42,6 +43,7 @@ export class LottoEnterComponent implements OnInit {
     console.log(this.myForm.value.no3);
     console.log(this.myForm.value.no4);
     this.showheros(this.lotteryOptions);
+    this.myEvent.emit(null);
   }
 
 
