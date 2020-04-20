@@ -6,7 +6,13 @@ import {Config} from '../../interfaces/config';
 })
 export class LotteryComponentsService {
   public resultConfig: Config;
-  public  formData = {};
+
+  public letter;
+  public no1;
+  public no2;
+  public no3;
+  public no4;
+  public no5;
 
   constructor() { }
 
@@ -14,8 +20,13 @@ export class LotteryComponentsService {
     this.resultConfig = data;
   }
 
-  setFormData(data) {
-    this.formData = data;
+  setLotteryFormValues(letter, no1, no2, no3, no4, no5) {
+    this.letter = letter;
+    this.no1 = no1;
+    this.no2 = no2;
+    this.no3 = no3;
+    this.no4 = no4;
+    this.no5 = no5;
   }
 
 }

@@ -1,7 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
-import {Config} from '../../../interfaces/config';
-import {RestserviceService} from '../../../services/restservice.service';
 import {LotteryComponentsService} from '../../../services/sharedService/lottery-components.service';
 
 @Component({
@@ -21,6 +18,19 @@ export class LottoResultComponent implements OnInit {
   showResult() {
     this.changeHtmlElementById('rulename', this.lotteryComponentsService.resultConfig.ruleName);
     this.changeHtmlElementById('reward', this.lotteryComponentsService.resultConfig.reward);
+
+    this.changeHtmlElementById('letter', this.lotteryComponentsService.letter);
+    this.changeHtmlElementById('no1', this.lotteryComponentsService.no1);
+    this.changeHtmlElementById('no2', this.lotteryComponentsService.no2);
+    this.changeHtmlElementById('no3', this.lotteryComponentsService.no3);
+    this.changeHtmlElementById('no4', this.lotteryComponentsService.no4);
+    this.changeHtmlElementById('no5', this.lotteryComponentsService.no5);
+
+    this.lotteryComponentsService.resultConfig.matchingPositions.forEach(matchingPosition => {
+      if (matchingPosition.equals(1)) {
+
+      }
+    });
     console.log('Result Showed..!');
   }
 

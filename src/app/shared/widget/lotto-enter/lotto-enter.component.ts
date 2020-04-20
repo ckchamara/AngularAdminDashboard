@@ -29,7 +29,8 @@ export class LottoEnterComponent implements OnInit {
       no1: '',
       no2: '',
       no3: '',
-      no4: ''
+      no4: '',
+      no5: ''
     });
   }
 
@@ -56,13 +57,22 @@ export class LottoEnterComponent implements OnInit {
         { 2: this.myForm.value.no1 },
         { 3: this.myForm.value.no2 },
         { 4: this.myForm.value.no3 },
-        { 5: this.myForm.value.no4 }]
+        { 5: this.myForm.value.no4 }
+        ]
     };
 
     this.httpclientservice.addHero('http://localhost:9090/lottery/checkreward', reqBody)
       .subscribe(configResponce => {
         this.lotteryComponentsService.setResultConfig(configResponce);
-        this.lotteryComponentsService.setFormData(reqBody);
+
+        this.lotteryComponentsService.setLotteryFormValues(
+          this.myForm.value.letter,
+          this.myForm.value.no1,
+          this.myForm.value.no2,
+          this.myForm.value.no3,
+          this.myForm.value.no4,
+          this.myForm.value.no5);
+
         console.log(configResponce);
         this.myEvent.emit(null);
       });
