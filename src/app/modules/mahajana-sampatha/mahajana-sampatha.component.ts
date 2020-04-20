@@ -19,8 +19,6 @@ const ELEMENT_DATA: Prizetable[] = [
   selector: 'app-mahajana-sampatha',
   templateUrl: './mahajana-sampatha.component.html',
   styleUrls: ['./mahajana-sampatha.component.scss'],
-  providers: [LotteryComponentsService],
-  // directives: [ChildComponent, ChildSiblingComponent]
 })
 export class MahajanaSampathaComponent implements OnInit {
 

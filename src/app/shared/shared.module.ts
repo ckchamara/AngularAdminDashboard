@@ -22,6 +22,7 @@ import { LottoEnterComponent } from './widget/lotto-enter/lotto-enter.component'
 import {RestserviceService} from '../services/restservice.service';
 import {ReactiveFormsModule} from '@angular/forms';
 import { LottoResultComponent } from './widget/lotto-result/lotto-result.component';
+import {LotteryComponentsService} from "../services/sharedService/lottery-components.service";
 
 @NgModule({
   declarations: [
@@ -58,6 +59,9 @@ import { LottoResultComponent } from './widget/lotto-result/lotto-result.compone
     LottoEnterComponent,
     LottoResultComponent
   ],
-  providers: [RestserviceService],
+  providers: [
+    RestserviceService,
+    LotteryComponentsService
+  ]
 })
 export class SharedModule { }

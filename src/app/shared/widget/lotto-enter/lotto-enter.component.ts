@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Config} from '../../../interfaces/config';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {RestserviceService} from '../../../services/restservice.service';
+import {LotteryComponentsService} from '../../../services/sharedService/lottery-components.service';
 
 @Component({
   selector: 'app-lotto-enter',
@@ -15,7 +16,7 @@ export class LottoEnterComponent implements OnInit {
   @Output() myEvent = new EventEmitter();
   @Input() lotteryOptions = {};
 
-  constructor(agc: RestserviceService) {
+  constructor(agc: RestserviceService, private lotteryComponentsService: LotteryComponentsService) {
     this.httpclientservice = agc;
   }
 
@@ -37,13 +38,12 @@ export class LottoEnterComponent implements OnInit {
   }
 
   buttonClick(): void {
+    this.showheros(this.lotteryOptions);
     console.log(this.myForm.value.letter);
     console.log(this.myForm.value.no1);
     console.log(this.myForm.value.no2);
     console.log(this.myForm.value.no3);
     console.log(this.myForm.value.no4);
-    this.showheros(this.lotteryOptions);
-    this.myEvent.emit(null);
   }
 
 
@@ -58,14 +58,15 @@ export class LottoEnterComponent implements OnInit {
         { 4: this.myForm.value.no3 },
         { 5: this.myForm.value.no4 }]
     };
+
     this.httpclientservice.addHero('http://localhost:9090/lottery/checkreward', reqBody)
       .subscribe(configResponce => {
+        this.lotteryComponentsService.setResultConfig(configResponce);
+        this.lotteryComponentsService.setFormData(reqBody);
         console.log(configResponce);
+        this.myEvent.emit(null);
       });
   }
 
-  changeHtmlElementById(lbl, val) {
-    document.getElementById(lbl).innerHTML = val;
-  }
 
 }
