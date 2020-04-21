@@ -4,6 +4,7 @@ import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { PostsComponent } from './modules/posts/posts.component';
 import {MahajanaSampathaComponent} from './modules/mahajana-sampatha/mahajana-sampatha.component';
+import {GovisethaComponent} from './modules/govisetha/govisetha.component';
 
 const routes: Routes = [{
   path: '',
@@ -19,7 +20,12 @@ const routes: Routes = [{
   {
     path: 'mahajana_sampatha',
     component: MahajanaSampathaComponent
-  }]
+  },
+  {
+    path: 'govisetha',
+    component: GovisethaComponent
+  }
+  ]
 }];
 
 @NgModule({

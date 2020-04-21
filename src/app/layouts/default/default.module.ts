@@ -11,6 +11,7 @@ import { DashboardService } from 'src/app/modules/dashboard.service';
 import {MahajanaSampathaComponent} from '../../modules/mahajana-sampatha/mahajana-sampatha.component';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import {LottoEnterComponent} from '../../shared/widget/lotto-enter/lotto-enter.component';
+import {GovisethaComponent} from '../../modules/govisetha/govisetha.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import {LottoEnterComponent} from '../../shared/widget/lotto-enter/lotto-enter.c
     DashboardComponent,
     PostsComponent,
     MahajanaSampathaComponent,
+    GovisethaComponent
   ],
   imports: [
     CommonModule,
