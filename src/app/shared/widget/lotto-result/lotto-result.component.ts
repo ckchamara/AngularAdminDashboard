@@ -13,6 +13,8 @@ export class LottoResultComponent implements OnInit {
   public no3color: any;
   public no4color: any;
   public no5color: any;
+  public no6color: any;
+
 
 
   constructor(private lotteryComponentsService: LotteryComponentsService) {
@@ -34,6 +36,7 @@ export class LottoResultComponent implements OnInit {
     this.changeHtmlElementById('no3', this.lotteryComponentsService.no3);
     this.changeHtmlElementById('no4', this.lotteryComponentsService.no4);
     this.changeHtmlElementById('no5', this.lotteryComponentsService.no5);
+    this.changeHtmlElementById('no6', this.lotteryComponentsService.no6);
 
     this.lotteryComponentsService.resultConfig.matchingPositions.forEach(matchingPosition => {
       switch (matchingPosition) {
@@ -48,6 +51,8 @@ export class LottoResultComponent implements OnInit {
         case 5 : this.no4color = 'orangered';
                  break;
         case 6 : this.no5color = 'orangered';
+                 break;
+        case 7 : this.no6color = 'orangered';
                  break;
       }
 

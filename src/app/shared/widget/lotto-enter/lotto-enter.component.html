@@ -1,7 +1,7 @@
 <mat-card class="lottoinput" style="background-color: aliceblue">
   <mat-card-content>
     <h2 class="mat-h2" style="color: rgba(0,0,0,0.60)">Enter Lottery Numbers</h2>
-    <div style="padding: 30px 10px;">
+    <div style="padding: 20px 10px;">
       <form [formGroup]="myForm">
         <div class="form-row">
           <div class="col">
@@ -23,7 +23,7 @@
             <input type="text" class="form-control" placeholder="No 5" formControlName="no5">
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="No 5" formControlName="no6">
+            <input type="text" class="form-control" placeholder="No 6" formControlName="no6">
           </div>
         </div>
         <div id="button">
@@ -31,6 +31,16 @@
         </div>
       </form>
     </div>
+
+    <div><label class="mat-h4" style="color: rgba(0,0,0,0.60); margin-left: 15px">Result</label></div>
+    <div class="circle"><h4 id="index1" class="h4"></h4></div>
+    <div class="circle"><h4 id="index2" class="h4"></h4></div>
+    <div class="circle"><h4 id="index3" class="h4"></h4></div>
+    <div class="circle"><h4 id="index4" class="h4"></h4></div>
+    <div class="circle"><h4 id="index5" class="h4"></h4></div>
+    <div class="circle"><h4 id="index6" class="h4"></h4></div>
+    <div class="circle"><h4 id="index7" class="h4"></h4></div>
+
   </mat-card-content>
 </mat-card>
 

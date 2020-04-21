@@ -27,7 +27,12 @@ export class GovisethaComponent implements OnInit {
   reqBody = {
     name: 'govisetha',
     id: 321,
-    lotteryElementCount: 5
+    lotteryElementCount: 5,
+    index1: 'J',
+    index2: '03',
+    index3: '20',
+    index4: '27',
+    index5: '62'
   };
   constructor() { }
 

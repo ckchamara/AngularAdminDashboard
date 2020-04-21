@@ -11,7 +11,7 @@ const routes: Routes = [{
   component: DefaultComponent,
   children : [{
     path: '',
-    component: DashboardComponent
+    component: MahajanaSampathaComponent
   },
   {
     path: 'posts',

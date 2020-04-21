@@ -25,8 +25,16 @@ export class MahajanaSampathaComponent implements OnInit {
   lotteryOptions = {};
 
   reqBody = {
-    name: 'govisetha',
-    id: 321
+    name: 'mahajanaSampatha',
+    id: 321 ,
+    lotteryElementCount: 7,
+    index1: 'U',
+    index2: '7',
+    index3: '4',
+    index4: '9',
+    index5: '9',
+    index6: '7',
+    index7: '2'
   };
   constructor() { }
 
