@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
-import { GovisethaComponent } from './modules/govisetha/govisetha.component';
+
 
 @NgModule({
   declarations: [

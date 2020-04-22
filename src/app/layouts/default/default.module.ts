@@ -10,8 +10,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardService } from 'src/app/modules/dashboard.service';
 import {MahajanaSampathaComponent} from '../../modules/mahajana-sampatha/mahajana-sampatha.component';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
-import {LottoEnterComponent} from '../../shared/widget/lotto-enter/lotto-enter.component';
 import {GovisethaComponent} from '../../modules/govisetha/govisetha.component';
+import {DhanaNidhanayaComponent} from '../../modules/dhana-nidhanaya/dhana-nidhanaya.component';
 
 
 @NgModule({
@@ -20,7 +20,8 @@ import {GovisethaComponent} from '../../modules/govisetha/govisetha.component';
     DashboardComponent,
     PostsComponent,
     MahajanaSampathaComponent,
-    GovisethaComponent
+    GovisethaComponent,
+    DhanaNidhanayaComponent
   ],
   imports: [
     CommonModule,

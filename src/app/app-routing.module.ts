@@ -5,6 +5,7 @@ import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { PostsComponent } from './modules/posts/posts.component';
 import {MahajanaSampathaComponent} from './modules/mahajana-sampatha/mahajana-sampatha.component';
 import {GovisethaComponent} from './modules/govisetha/govisetha.component';
+import {DhanaNidhanayaComponent} from './modules/dhana-nidhanaya/dhana-nidhanaya.component';
 
 const routes: Routes = [{
   path: '',
@@ -21,9 +22,13 @@ const routes: Routes = [{
     path: 'mahajana_sampatha',
     component: MahajanaSampathaComponent
   },
-  {
+    {
     path: 'govisetha',
     component: GovisethaComponent
+  },
+  {
+    path: 'dhana_nidhanaya',
+    component: DhanaNidhanayaComponent
   }
   ]
 }];

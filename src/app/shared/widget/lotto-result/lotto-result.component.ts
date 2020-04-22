@@ -30,13 +30,13 @@ export class LottoResultComponent implements OnInit {
     this.changeHtmlElementById('rulename', this.lotteryComponentsService.resultConfig.ruleName);
     this.changeHtmlElementById('reward', this.lotteryComponentsService.resultConfig.reward);
 
-    this.changeHtmlElementById('letter', this.lotteryComponentsService.letter);
-    this.changeHtmlElementById('no1', this.lotteryComponentsService.no1);
-    this.changeHtmlElementById('no2', this.lotteryComponentsService.no2);
-    this.changeHtmlElementById('no3', this.lotteryComponentsService.no3);
-    this.changeHtmlElementById('no4', this.lotteryComponentsService.no4);
-    this.changeHtmlElementById('no5', this.lotteryComponentsService.no5);
-    this.changeHtmlElementById('no6', this.lotteryComponentsService.no6);
+    this.changeHtmlElementById('letter', !this.lotteryComponentsService.letter ? null : this.lotteryComponentsService.letter);
+    this.changeHtmlElementById('no1', !this.lotteryComponentsService.no1 ? null : this.lotteryComponentsService.no1);
+    this.changeHtmlElementById('no2', !this.lotteryComponentsService.no2 ? null : this.lotteryComponentsService.no2);
+    this.changeHtmlElementById('no3', !this.lotteryComponentsService.no3 ? null : this.lotteryComponentsService.no3);
+    this.changeHtmlElementById('no4', !this.lotteryComponentsService.no4 ? null : this.lotteryComponentsService.no4);
+    this.changeHtmlElementById('no5', !this.lotteryComponentsService.no5 ? null : this.lotteryComponentsService.no5);
+    this.changeHtmlElementById('no6', !this.lotteryComponentsService.no6 ? null : this.lotteryComponentsService.no6);
 
     this.lotteryComponentsService.resultConfig.matchingPositions.forEach(matchingPosition => {
       switch (matchingPosition) {
