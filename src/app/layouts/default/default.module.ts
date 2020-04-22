@@ -12,6 +12,7 @@ import {MahajanaSampathaComponent} from '../../modules/mahajana-sampatha/mahajan
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import {GovisethaComponent} from '../../modules/govisetha/govisetha.component';
 import {DhanaNidhanayaComponent} from '../../modules/dhana-nidhanaya/dhana-nidhanaya.component';
+import {JathikaSampathaComponent} from '../../modules/jathika-sampatha/jathika-sampatha.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {DhanaNidhanayaComponent} from '../../modules/dhana-nidhanaya/dhana-nidha
     PostsComponent,
     MahajanaSampathaComponent,
     GovisethaComponent,
-    DhanaNidhanayaComponent
+    DhanaNidhanayaComponent,
+    JathikaSampathaComponent,
   ],
   imports: [
     CommonModule,

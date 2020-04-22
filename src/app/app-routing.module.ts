@@ -6,6 +6,7 @@ import { PostsComponent } from './modules/posts/posts.component';
 import {MahajanaSampathaComponent} from './modules/mahajana-sampatha/mahajana-sampatha.component';
 import {GovisethaComponent} from './modules/govisetha/govisetha.component';
 import {DhanaNidhanayaComponent} from './modules/dhana-nidhanaya/dhana-nidhanaya.component';
+import {JathikaSampathaComponent} from "./modules/jathika-sampatha/jathika-sampatha.component";
 
 const routes: Routes = [{
   path: '',
@@ -29,6 +30,10 @@ const routes: Routes = [{
   {
     path: 'dhana_nidhanaya',
     component: DhanaNidhanayaComponent
+  },
+  {
+    path: 'jathika-sampatha',
+    component: JathikaSampathaComponent
   }
   ]
 }];
