@@ -1,5 +1,7 @@
 # Dashboard
 
+![](bandicam 2020-04-23 13-00-09-948.jpg)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
 
 ## Development server
