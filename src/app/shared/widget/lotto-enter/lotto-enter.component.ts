@@ -20,12 +20,13 @@ export class LottoEnterComponent implements OnInit {
   httpclientservice: RestserviceService;
   myMap = new Map();
 
-@Output() myEvent = new EventEmitter();
-@Input() lotteryOptions = {};
+  @Output() myEvent = new EventEmitter();
+  @Input() lotteryOptions = {};
 
-config: Config;
+  config: Config;
+  drawNo: any;
 
-ngOnInit(): void {
+  ngOnInit(): void {
     const fd: FormBuilder = new FormBuilder();
     this.myForm = fd.group({
       letter: '',
@@ -36,19 +37,20 @@ ngOnInit(): void {
       no5: '',
       no6: ''
     });
-    this.setLatestResultValues(this.lotteryOptions);
+
+    // this.setLatestResultValues(this.lotteryOptions);
     this.disableForms(this.lotteryOptions);
   }
 
-  setLatestResultValues(lotteryOptions) {
-    this.changeHtmlElementById('index1', !lotteryOptions.index1 ? null : lotteryOptions.index1);
-    this.changeHtmlElementById('index2', !lotteryOptions.index2 ? null : lotteryOptions.index2);
-    this.changeHtmlElementById('index3', !lotteryOptions.index3 ? null : lotteryOptions.index3);
-    this.changeHtmlElementById('index4', !lotteryOptions.index4 ? null : lotteryOptions.index4);
-    this.changeHtmlElementById('index5', !lotteryOptions.index5 ? null : lotteryOptions.index5);
-    this.changeHtmlElementById('index6', !lotteryOptions.index6 ? null : lotteryOptions.index6);
-    this.changeHtmlElementById('index7', !lotteryOptions.index7 ? null : lotteryOptions.index7);
-  }
+  // setLatestResultValues(lotteryOptions) {
+  //   this.changeHtmlElementById('index1', !lotteryOptions.index1 ? null : lotteryOptions.index1);
+  //   this.changeHtmlElementById('index2', !lotteryOptions.index2 ? null : lotteryOptions.index2);
+  //   this.changeHtmlElementById('index3', !lotteryOptions.index3 ? null : lotteryOptions.index3);
+  //   this.changeHtmlElementById('index4', !lotteryOptions.index4 ? null : lotteryOptions.index4);
+  //   this.changeHtmlElementById('index5', !lotteryOptions.index5 ? null : lotteryOptions.index5);
+  //   this.changeHtmlElementById('index6', !lotteryOptions.index6 ? null : lotteryOptions.index6);
+  //   this.changeHtmlElementById('index7', !lotteryOptions.index7 ? null : lotteryOptions.index7);
+  // }
 
   disableForms(lotteryOptions) {
     const availableForms = 7;
@@ -75,13 +77,34 @@ ngOnInit(): void {
     console.log('you submited value ', value);
   }
 
-buttonClick(): void {
-  this.showheros(this.lotteryOptions);
-  console.log(this.myForm.value.letter);
-  console.log(this.myForm.value.no1);
-  console.log(this.myForm.value.no2);
-  console.log(this.myForm.value.no3);
-  console.log(this.myForm.value.no4);
+  buttonClick(): void {
+    this.showheros(this.lotteryOptions);
+    console.log(this.myForm.value.letter);
+    console.log(this.myForm.value.no1);
+    console.log(this.myForm.value.no2);
+    console.log(this.myForm.value.no3);
+    console.log(this.myForm.value.no4);
+    this.getResultValues(this.lotteryOptions);
+  }
+
+  getResultValues(lotteryOptions) {
+    const reqBody = {
+      lotteryName: lotteryOptions.name,
+      drawNo: this.drawNo,
+    };
+    this.httpclientservice.addHero('http://localhost:9090/db/retriveDoc', reqBody)
+      .subscribe(configRespond => {
+        console.log(configRespond);
+        // const obj = JSON.parse(configRespond);
+        // console.log(JSON.parse(configRespond));
+        this.changeHtmlElementById('index1', !configRespond.positions[0].value ? null : configRespond.positions[0] );
+        this.changeHtmlElementById('index2', !configRespond.positions[1] ? null : configRespond.positions[1] );
+        this.changeHtmlElementById('index3', !configRespond.positions[2] ? null : configRespond.positions[2] );
+        this.changeHtmlElementById('index4', !configRespond.positions[3] ? null : configRespond.positions[3] );
+        this.changeHtmlElementById('index5', !configRespond.positions[4] ? null : configRespond.positions[4] );
+        this.changeHtmlElementById('index6', !configRespond.positions[5] ? null : configRespond.positions[5] );
+        this.changeHtmlElementById('index7', !configRespond.positions[7] ? null : configRespond.positions[6] );
+      });
   }
 
   // const reqBody = {
@@ -98,10 +121,10 @@ buttonClick(): void {
     const reqBody = {
       name: lotteryOptions.name,
       id: lotteryOptions.id,
+      drawNo: this.drawNo,
       positions: this.putLotteryPositionsByElementCount(lotteryOptions.lotteryElementCount)
     };
-
-    this.httpclientservice.addHero('http://localhost:9090/lottery/checkreward', reqBody)
+    this.httpclientservice.addHero('http://localhost:9090/lottery/checkRewardAsJson', reqBody)
       .subscribe(configResponce => {
         this.lotteryComponentsService.setResultConfig(configResponce);
 
@@ -134,20 +157,27 @@ buttonClick(): void {
     for (let i = 1; i <= index; i++) {
       let temp;
       switch (i) {
-        case 1:  temp = { 1: this.myMap.get(i) };
-                 break;
-        case 2:  temp = { 2: this.myMap.get(i)};
-                 break;
-        case 3:  temp = { 3: this.myMap.get(i)};
-                 break;
-        case 4:  temp = { 4: this.myMap.get(i)};
-                 break;
-        case 5:  temp = { 5: this.myMap.get(i)};
-                 break;
-        case 6:  temp = { 6: this.myMap.get(i)};
-                 break;
-        case 7:  temp = { 7: this.myMap.get(i)};
-                 break;
+        case 1:
+          temp = {1: this.myMap.get(i)};
+          break;
+        case 2:
+          temp = {2: this.myMap.get(i)};
+          break;
+        case 3:
+          temp = {3: this.myMap.get(i)};
+          break;
+        case 4:
+          temp = {4: this.myMap.get(i)};
+          break;
+        case 5:
+          temp = {5: this.myMap.get(i)};
+          break;
+        case 6:
+          temp = {6: this.myMap.get(i)};
+          break;
+        case 7:
+          temp = {7: this.myMap.get(i)};
+          break;
       }
       NAMES.push(temp);
     }
@@ -157,5 +187,6 @@ buttonClick(): void {
   changeHtmlElementById(lbl, val) {
     document.getElementById(lbl).innerHTML = val;
   }
+
 
 }

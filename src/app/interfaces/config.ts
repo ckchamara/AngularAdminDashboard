@@ -5,4 +5,5 @@ export interface Config {
   reward: number;
   ruleName: string;
   timestamp: number;
+  positions: any;
 }

@@ -5,7 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {Config} from '../interfaces/config';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class RestserviceService {
 

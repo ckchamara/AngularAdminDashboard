@@ -20,9 +20,10 @@ import { CardComponent } from './widget/card/card.component';
 import { PieComponent } from './widget/pie/pie.component';
 import { LottoEnterComponent } from './widget/lotto-enter/lotto-enter.component';
 import {RestserviceService} from '../services/restservice.service';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LottoResultComponent } from './widget/lotto-result/lotto-result.component';
-import {LotteryComponentsService} from "../services/sharedService/lottery-components.service";
+import {LotteryComponentsService} from '../services/sharedService/lottery-components.service';
+import { LottoConfigHeaderComponent } from './widget/lotto-config-header/lotto-config-header.component';
 
 @NgModule({
   declarations: [
@@ -33,22 +34,24 @@ import {LotteryComponentsService} from "../services/sharedService/lottery-compon
     CardComponent,
     PieComponent,
     LottoEnterComponent,
-    LottoResultComponent
+    LottoResultComponent,
+    LottoConfigHeaderComponent
   ],
-  imports: [
-    CommonModule,
-    MatDividerModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    FlexLayoutModule,
-    MatMenuModule,
-    MatListModule,
-    RouterModule,
-    HighchartsChartModule,
-    ReactiveFormsModule,
-    MatCardModule
-  ],
+    imports: [
+        CommonModule,
+        MatDividerModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        FlexLayoutModule,
+        MatMenuModule,
+        MatListModule,
+        RouterModule,
+        HighchartsChartModule,
+        ReactiveFormsModule,
+        MatCardModule,
+        FormsModule
+    ],
   exports: [
     FooterComponent,
     HeaderComponent,
@@ -57,7 +60,8 @@ import {LotteryComponentsService} from "../services/sharedService/lottery-compon
     CardComponent,
     PieComponent,
     LottoEnterComponent,
-    LottoResultComponent
+    LottoResultComponent,
+    LottoConfigHeaderComponent
   ],
   providers: [
     RestserviceService,

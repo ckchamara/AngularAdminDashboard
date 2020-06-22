@@ -1,6 +1,8 @@
 <mat-card class="lottoinput" style="background-color: aliceblue">
   <mat-card-content>
-    <h2 class="mat-h2" style="color: rgba(0,0,0,0.60)">Enter Lottery Numbers</h2>
+    <h2 class="mat-h2" style="color: rgba(0,0,0,0.60); display: inline-block">Enter Lottery Numbers</h2>
+    <h2 class="mat-h3" style="color: rgba(0,0,0,0.60); padding-left: 80px; padding-right: 15px; display: inline-block">Enter Draw No</h2>
+    <input style="width: 90px; display: inline-block" class="form-control" type="text" placeholder="Draw No" [(ngModel)]="drawNo">
     <div style="padding: 20px 10px;">
       <form [formGroup]="myForm">
         <div class="form-row">
@@ -8,7 +10,7 @@
             <input type="text" class="form-control" placeholder="letter" formControlName="letter">
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="No 1"  formControlName="no1">
+            <input type="text" class="form-control" placeholder="No 1" formControlName="no1">
           </div>
           <div class="col">
             <input type="text" class="form-control" placeholder="No 2" formControlName="no2">
