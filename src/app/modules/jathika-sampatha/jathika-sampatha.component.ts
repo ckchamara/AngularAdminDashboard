@@ -26,17 +26,9 @@ export class JathikaSampathaComponent implements OnInit {
   lotteryOptions = {};
 
   reqBody = {
-    name: 'jathikaSampatha',
+    name: 'jathikasampatha',
     id: 321,
-    lotteryElementCount: 7,
-    index1: 'N ',
-    index2: '2',
-    index3: '7',
-    index4: '0',
-    index5: '9',
-    index6: '1',
-    index7: '3',
-
+    lotteryElementCount: 7
   };
   constructor() { }
 

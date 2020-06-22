@@ -25,12 +25,7 @@ export class SevanaComponent implements OnInit {
   reqBody = {
     name: 'sevana',
     id: 321,
-    lotteryElementCount: 5,
-    index1: 'T',
-    index2: '16',
-    index3: '44',
-    index4: '53',
-    index5: '59'
+    lotteryElementCount: 5
   };
   constructor() { }
 

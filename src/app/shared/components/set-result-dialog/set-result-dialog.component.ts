@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-set-result-dialog',
@@ -7,7 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SetResultDialogComponent implements OnInit {
 
-  constructor() { }
+  // constructor() { }
+
+  constructor(private activatedRoute: ActivatedRoute) {
+    const a = activatedRoute.pathFromRoot;
+    console.log(a);
+  }
+
+  // constructor(private activatedRoute: ActivatedRoute) {
+  //   this.activatedRoute.queryParams.subscribe(params => {
+  //     const date = params.startdate;
+  //     console.log(date); // Print the parameter to the console.
+  //   });
+  // }
 
   ngOnInit(): void {
   }

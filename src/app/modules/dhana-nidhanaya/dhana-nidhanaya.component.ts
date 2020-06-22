@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Prizetable} from '../../interfaces/prizetable';
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Router} from '@angular/router';
 
 const ELEMENT_DATA: Prizetable[] = [
   {position: 1, pattern: 'Letter and 4 Numbers Correct', prize: 'Rs. 0.00'},
@@ -25,14 +25,9 @@ export class DhanaNidhanayaComponent implements OnInit {
   lotteryOptions = {};
 
   reqBody = {
-    name: 'dhanaNidhanaya',
+    name: 'dhananidhanaya',
     id: 321,
-    lotteryElementCount: 5,
-    index1: 'B',
-    index2: '17',
-    index3: '35',
-    index4: '46',
-    index5: '71'
+    lotteryElementCount: 5
   };
   constructor(route: ActivatedRoute, private router: Router) {
     // https://stackoverflow.com/questions/41678356/router-navigate-does-not-call-ngoninit-when-same-page

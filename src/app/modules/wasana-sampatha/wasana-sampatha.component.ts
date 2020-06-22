@@ -23,14 +23,9 @@ export class WasanaSampathaComponent implements OnInit {
   lotteryOptions = {};
 
   reqBody = {
-    name: 'wasanaSampatha',
+    name: 'wasanasampatha',
     id: 321,
-    lotteryElementCount: 5,
-    index1: 'K',
-    index2: '41',
-    index3: '46',
-    index4: '55',
-    index5: '61'
+    lotteryElementCount: 5
   };
   constructor() { }
 
