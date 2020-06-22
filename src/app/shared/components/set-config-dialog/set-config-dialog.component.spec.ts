@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LottoConfigHeaderComponent } from './lotto-config-header.component';
+import { SetConfigDialogComponent } from './set-config-dialog.component';
 
-describe('LottoConfigHeaderComponent', () => {
-  let component: LottoConfigHeaderComponent;
-  let fixture: ComponentFixture<LottoConfigHeaderComponent>;
+describe('ConfigDialogComponent', () => {
+  let component: SetConfigDialogComponent;
+  let fixture: ComponentFixture<SetConfigDialogComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LottoConfigHeaderComponent ]
+      declarations: [ SetConfigDialogComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LottoConfigHeaderComponent);
+    fixture = TestBed.createComponent(SetConfigDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
