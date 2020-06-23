@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {SetConfigDialogComponent} from '../../components/set-config-dialog/set-config-dialog.component';
 import {SetResultDialogComponent} from '../../components/set-result-dialog/set-result-dialog.component';
 import {Router} from '@angular/router';
+import {RestserviceService} from '../../../services/restservice.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-lotto-config-header',
@@ -11,22 +13,32 @@ import {Router} from '@angular/router';
 })
 export class LottoConfigButtonHeaderComponent implements OnInit {
 
-  constructor(public dialog: MatDialog, private router: Router) {}
+  constructor(public dialog: MatDialog, private router: Router, private http: HttpClient) {
+  }
+
+  code: any;
 
   ngOnInit(): void {
   }
 
-  openConfigDialog() {
-    const dialogRef = this.dialog.open(SetConfigDialogComponent);
-    console.log(this.router.url.replace('/', ''));
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log(`Dialog result: ${result}`);
-    //   this.activatedRoute.url.subscribe(ufrl => {
-    //     // ufrl[]
-    //   });
-    //   console.log(this.activatedRoute.url);
-    // });
+  getConfigFileForLottery() {
+    const lotteryNameByUrl = this.router.url;
+    console.log(lotteryNameByUrl + 'hgfhgfg');
+    this.http.get<any>('http://localhost:9090/db/returnConfigFile' + lotteryNameByUrl).subscribe(data => {
+      this.code = data;
+    });
   }
+
+  openConfigDialog() {
+    this.getConfigFileForLottery();
+    const dialogRef = this.dialog.open(SetConfigDialogComponent, {
+      data: this.code,
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
 
   openSetResultDialog() {
     const dialogRef = this.dialog.open(SetResultDialogComponent);

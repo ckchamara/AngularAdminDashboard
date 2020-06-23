@@ -58,18 +58,18 @@ export class LottoEnterComponent implements OnInit {
       case 1: {
         this.myForm.controls.no6.disable();
       }
-              break;
+        break;
       case 2: {
         this.myForm.controls.no6.disable();
         this.myForm.controls.no5.disable();
       }
-              break;
+        break;
       case 3: {
         this.myForm.controls.no6.disable();
         this.myForm.controls.no5.disable();
         this.myForm.controls.no4.disable();
       }
-              break;
+        break;
     }
   }
 
@@ -97,13 +97,13 @@ export class LottoEnterComponent implements OnInit {
         console.log(configRespond);
         // const obj = JSON.parse(configRespond);
         // console.log(JSON.parse(configRespond));
-        this.changeHtmlElementById('index1', !configRespond.positions[0].value ? null : configRespond.positions[0] );
-        this.changeHtmlElementById('index2', !configRespond.positions[1] ? null : configRespond.positions[1] );
-        this.changeHtmlElementById('index3', !configRespond.positions[2] ? null : configRespond.positions[2] );
-        this.changeHtmlElementById('index4', !configRespond.positions[3] ? null : configRespond.positions[3] );
-        this.changeHtmlElementById('index5', !configRespond.positions[4] ? null : configRespond.positions[4] );
-        this.changeHtmlElementById('index6', !configRespond.positions[5] ? null : configRespond.positions[5] );
-        this.changeHtmlElementById('index7', !configRespond.positions[7] ? null : configRespond.positions[6] );
+        this.changeHtmlElementById('index1', !configRespond.index1 ? null : configRespond.index1);
+        this.changeHtmlElementById('index2', !configRespond.index2 ? null : configRespond.index2);
+        this.changeHtmlElementById('index3', !configRespond.index3 ? null : configRespond.index3);
+        this.changeHtmlElementById('index4', !configRespond.index4 ? null : configRespond.index4);
+        this.changeHtmlElementById('index5', !configRespond.index5 ? null : configRespond.index5);
+        this.changeHtmlElementById('index6', !configRespond.index6 ? null : configRespond.index6);
+        this.changeHtmlElementById('index7', !configRespond.index7 ? null : configRespond.index7);
       });
   }
 

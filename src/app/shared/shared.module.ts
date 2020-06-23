@@ -27,6 +27,8 @@ import {LottoConfigButtonHeaderComponent} from './widget/lotto-config-button-hea
 import {SetConfigDialogComponent} from './components/set-config-dialog/set-config-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { SetResultDialogComponent } from './components/set-result-dialog/set-result-dialog.component';
+import {HighlightModule} from 'ngx-highlightjs';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { SetResultDialogComponent } from './components/set-result-dialog/set-res
     ReactiveFormsModule,
     MatCardModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    HighlightModule,
+    HttpClientModule
   ],
   exports: [
     FooterComponent,

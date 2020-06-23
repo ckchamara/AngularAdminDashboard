@@ -6,9 +6,9 @@ import { PostsComponent } from './modules/posts/posts.component';
 import {MahajanaSampathaComponent} from './modules/mahajana-sampatha/mahajana-sampatha.component';
 import {GovisethaComponent} from './modules/govisetha/govisetha.component';
 import {DhanaNidhanayaComponent} from './modules/dhana-nidhanaya/dhana-nidhanaya.component';
-import {JathikaSampathaComponent} from "./modules/jathika-sampatha/jathika-sampatha.component";
-import {SevanaComponent} from "./modules/sevana/sevana.component";
-import {WasanaSampathaComponent} from "./modules/wasana-sampatha/wasana-sampatha.component";
+import {JathikaSampathaComponent} from './modules/jathika-sampatha/jathika-sampatha.component';
+import {SevanaComponent} from './modules/sevana/sevana.component';
+import {WasanaSampathaComponent} from './modules/wasana-sampatha/wasana-sampatha.component';
 
 const routes: Routes = [{
   path: '',
@@ -22,7 +22,7 @@ const routes: Routes = [{
     component: PostsComponent
   },
   {
-    path: 'mahajana_sampatha',
+    path: 'mahajanaSampatha',
     component: MahajanaSampathaComponent
   },
     {
@@ -30,11 +30,11 @@ const routes: Routes = [{
     component: GovisethaComponent
   },
   {
-    path: 'dhana_nidhanaya',
+    path: 'dhanaNidhanaya',
     component: DhanaNidhanayaComponent
   },
   {
-    path: 'jathika-sampatha',
+    path: 'jathikaSampatha',
     component: JathikaSampathaComponent
   },
   {
@@ -42,7 +42,7 @@ const routes: Routes = [{
     component: SevanaComponent
   },
   {
-    path: 'wasana_sampatha',
+    path: 'wasanaSampatha',
     component: WasanaSampathaComponent
   }
   ]
