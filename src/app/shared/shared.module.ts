@@ -72,7 +72,8 @@ import { ConfigViewerComponent } from './components/config-viewer/config-viewer.
     LottoEnterComponent,
     LottoResultComponent,
     LottoConfigButtonHeaderComponent,
-    SetResultDialogComponent
+    SetResultDialogComponent,
+    ConfigViewerComponent
   ],
   providers: [
     RestserviceService,
