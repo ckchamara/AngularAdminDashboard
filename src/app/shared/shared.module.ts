@@ -28,6 +28,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { SetResultDialogComponent } from './components/set-result-dialog/set-result-dialog.component';
 import {HighlightModule} from 'ngx-highlightjs';
 import {HttpClientModule} from '@angular/common/http';
+import { ConfigViewerComponent } from './components/config-viewer/config-viewer.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {HttpClientModule} from '@angular/common/http';
     LottoEnterComponent,
     LottoResultComponent,
     LottoConfigButtonHeaderComponent,
-    SetResultDialogComponent
+    SetResultDialogComponent,
+    ConfigViewerComponent
   ],
   imports: [
     CommonModule,
