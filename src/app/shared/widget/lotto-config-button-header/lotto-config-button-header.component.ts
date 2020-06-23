@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-import {SetConfigDialogComponent} from '../../components/set-config-dialog/set-config-dialog.component';
 import {SetResultDialogComponent} from '../../components/set-result-dialog/set-result-dialog.component';
 import {Router} from '@angular/router';
-import {RestserviceService} from '../../../services/restservice.service';
 import {HttpClient} from '@angular/common/http';
 
 @Component({
@@ -26,16 +24,6 @@ export class LottoConfigButtonHeaderComponent implements OnInit {
     console.log(lotteryNameByUrl + 'hgfhgfg');
     this.http.get<any>('http://localhost:9090/db/returnConfigFile' + lotteryNameByUrl).subscribe(data => {
       this.code = data;
-    });
-  }
-
-  openConfigDialog() {
-    this.getConfigFileForLottery();
-    const dialogRef = this.dialog.open(SetConfigDialogComponent, {
-      data: this.code,
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
     });
   }
 

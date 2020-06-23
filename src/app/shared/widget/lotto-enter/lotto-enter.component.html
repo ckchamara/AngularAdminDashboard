@@ -1,8 +1,10 @@
 <mat-card class="lottoinput" style="background-color: aliceblue">
   <mat-card-content>
     <h2 class="mat-h2" style="color: rgba(0,0,0,0.60); display: inline-block">Enter Lottery Numbers</h2>
-    <h2 class="mat-h3" style="color: rgba(0,0,0,0.60); padding-left: 80px; padding-right: 15px; display: inline-block">Enter Draw No</h2>
-    <input style="width: 90px; display: inline-block" class="form-control" type="text" placeholder="Draw No" [(ngModel)]="drawNo">
+    <h2 class="mat-h3" style="color: rgba(0,0,0,0.60); padding-left: 80px; padding-right: 15px; display: inline-block">
+      Enter Draw No</h2>
+    <input style="width: 90px; display: inline-block" class="form-control" type="text" placeholder="Draw No"
+           [(ngModel)]="drawNo">
     <div style="padding: 20px 10px;">
       <form [formGroup]="myForm">
         <div class="form-row">
@@ -34,7 +36,7 @@
       </form>
     </div>
 
-    <div><label class="mat-h4" style="color: rgba(0,0,0,0.60); margin-left: 15px">Result</label></div>
+    <div><label class="mat-h4" style="color: rgba(0,0,0,0.60); margin-left: 15px">Winning Numbers</label></div>
     <div class="circle"><h4 id="index1" class="h4"></h4></div>
     <div class="circle"><h4 id="index2" class="h4"></h4></div>
     <div class="circle"><h4 id="index3" class="h4"></h4></div>
@@ -42,6 +44,10 @@
     <div class="circle"><h4 id="index5" class="h4"></h4></div>
     <div class="circle"><h4 id="index6" class="h4"></h4></div>
     <div class="circle"><h4 id="index7" class="h4"></h4></div>
+    <div align="right">
+      <button mat-raised-button color="primary" (click)="ButtonClickcreateIndex()" type="addResult">Upsert Record</button>
+    </div>
+
 
   </mat-card-content>
 </mat-card>

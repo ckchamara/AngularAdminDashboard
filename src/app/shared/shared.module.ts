@@ -24,7 +24,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {LottoResultComponent} from './widget/lotto-result/lotto-result.component';
 import {LotteryComponentsService} from '../services/sharedService/lottery-components.service';
 import {LottoConfigButtonHeaderComponent} from './widget/lotto-config-button-header/lotto-config-button-header.component';
-import {SetConfigDialogComponent} from './components/set-config-dialog/set-config-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { SetResultDialogComponent } from './components/set-result-dialog/set-result-dialog.component';
 import {HighlightModule} from 'ngx-highlightjs';
@@ -41,7 +40,6 @@ import {HttpClientModule} from '@angular/common/http';
     LottoEnterComponent,
     LottoResultComponent,
     LottoConfigButtonHeaderComponent,
-    SetConfigDialogComponent,
     SetResultDialogComponent
   ],
   imports: [
@@ -72,7 +70,6 @@ import {HttpClientModule} from '@angular/common/http';
     LottoEnterComponent,
     LottoResultComponent,
     LottoConfigButtonHeaderComponent,
-    SetConfigDialogComponent,
     SetResultDialogComponent
   ],
   providers: [
