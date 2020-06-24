@@ -29,6 +29,7 @@ import { SetResultDialogComponent } from './components/set-result-dialog/set-res
 import {HighlightModule} from 'ngx-highlightjs';
 import {HttpClientModule} from '@angular/common/http';
 import { ConfigViewerComponent } from './components/config-viewer/config-viewer.component';
+import { ConfigPopUpDialogViewerComponent } from './components/config-pop-up-dialog-viewer/config-pop-up-dialog-viewer.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ConfigViewerComponent } from './components/config-viewer/config-viewer.
     LottoResultComponent,
     LottoConfigButtonHeaderComponent,
     SetResultDialogComponent,
-    ConfigViewerComponent
+    ConfigViewerComponent,
+    ConfigPopUpDialogViewerComponent
   ],
   imports: [
     CommonModule,

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {HighlightResult} from 'ngx-highlightjs';
+import {ConfigPopUpDialogViewerComponent} from '../config-pop-up-dialog-viewer/config-pop-up-dialog-viewer.component';
+
 
 @Component({
   selector: 'app-config-viewer',
@@ -11,16 +14,162 @@ import {Router} from '@angular/router';
 export class ConfigViewerComponent implements OnInit {
 
   constructor(private router: Router, private http: HttpClient, public dialog: MatDialog) {
-    // this.code = data;
+    this.http.get<any>('http://localhost:9090/db/returnConfigFile' + this.router.url).subscribe(data => {
+      this.data = data.toString();
+      console.log(data);
+    });
   }
   response: HighlightResult;
 
   // tslint:disable-next-line:max-line-length
-  data = `{name: govisetha, id: 361, specialCharactors: [{image: lagna-abc, uri: urlToImage}], positions: [{'1': letter}, {'2': number}, {'3': number}, {'4': number}, {'5': number}], rules: [{rule: Letter and 4 Numbers Correct, positions: [1], nonFixedPositions: [2, 3, 4, 5], level: 1, positionalValue: false, matchingCount: 5, prize: 10000000}, {rule: 4 Numbers Correct, positions: [2, 3, 4, 5], level: 2, positionalValue: true, matchingCount: 4, prize: 1000000}, {rule: Letter and any 3 numbers correct, positions: [1], nonFixedPositions: [2, 3, 4, 5], level: 3, positionalValue: false, nonFixedType: number, matchingCount: 4, prize: 100000}, {rule: Any 3 numbers correct, positions: null, nonFixedPositions: [2, 3, 4, 5], level: 4, positionalValue: false, nonFixedType: number, matchingCount: 3, prize: 2000}, {rule: Letter and any 2 numbers correct, positions: [1], nonFixedPositions: [2, 3, 4, 5], level: 5, positionalValue: true, nonFixedType: number, matchingCount: 3, prize: 1000}, {rule: Any 2 numbers correct, positions: null, nonFixedPositions: [2, 3, 4, 5], level: 6, positionalValue: true, nonFixedType: number, matchingCount: 2, prize: 100}, {rule: Letter and any number correct, positions: [1], nonFixedPositions: [2, 3, 4, 5], level: 8, positionalValue: true, nonFixedType: number, matchingCount: 2, prize: 40}, {rule: Any Number Correct, positions: null, nonFixedPositions: [2, 3, 4, 5], level: 4, positionalValue: true, nonFixedType: number, matchingCount: 1, prize: 20}, {rule: Letter correct, positions: [1], level: 5, positionalValue: true, matchingCount: 1, prize: 20}]}
-`;
+data = 'name: LotteryName\n' +
+  'id: 321\n' +
+  'specialCharactors:\n' +
+  '  - image: lagna-abc\n' +
+  '    uri: urlToImage\n' +
+  '\n' +
+  'positions:\n' +
+  '  - 1: letter\n' +
+  '  - 2: number\n' +
+  '  - 3: number\n' +
+  '  - 4: number\n' +
+  '  - 5: number\n' +
+  '  - 6: number\n' +
+  '  - 7: number\n' +
+  '\n' +
+  'rules:\n' +
+  '  - rule: Letter and 6th 6 Numbers Correct\n' +
+  '    positions:\n' +
+  '      - 1\n' +
+  '      - 2\n' +
+  '      - 3\n' +
+  '      - 4\n' +
+  '      - 5\n' +
+  '      - 6\n' +
+  '      - 7\n' +
+  '    level: 1\n' +
+  '    nonFixedPositions:\n' +
+  '    positionalValue: true\n' +
+  '    nonFixedType:\n' +
+  '    matchingCount: 7\n' +
+  '    prize: 10000000.00  #10,000,000.00\n' +
+  '\n' +
+  '  - rule: 6th 6 Numbers Correct\n' +
+  '    positions:\n' +
+  '      - 2\n' +
+  '      - 3\n' +
+  '      - 4\n' +
+  '      - 5\n' +
+  '      - 6\n' +
+  '      - 7\n' +
+  '    level: 2\n' +
+  '    positionalValue: true\n' +
+  '    matchingCount: 6\n' +
+  '    prize: 2000000.00  #2,000,000.00\n' +
+  '\n' +
+  '  - rule: 6th 5 Numbers Correct\n' +
+  '    positions:\n' +
+  '      - 3\n' +
+  '      - 4\n' +
+  '      - 5\n' +
+  '      - 6\n' +
+  '      - 7\n' +
+  '    level: 3\n' +
+  '    positionalValue: true\n' +
+  '    matchingCount: 5\n' +
+  '    prize: 100000.00  #100,000.00\n' +
+  '\n' +
+  '  - rule: 6th 4 Numbers Correct\n' +
+  '    positions:\n' +
+  '      - 4\n' +
+  '      - 5\n' +
+  '      - 6\n' +
+  '      - 7\n' +
+  '    level: 4\n' +
+  '    positionalValue: true\n' +
+  '    matchingCount: 4\n' +
+  '    prize: 10000.00  #10,000.00\n' +
+  '\n' +
+  '  - rule: 5th 5 Numbers Correct\n' +
+  '    positions:\n' +
+  '      - 2\n' +
+  '      - 3\n' +
+  '      - 4\n' +
+  '      - 5\n' +
+  '      - 6\n' +
+  '    level: 4\n' +
+  '    positionalValue: true\n' +
+  '    matchingCount: 5\n' +
+  '    prize: 10000.00  #10,000.00\n' +
+  '\n' +
+  '  - rule: 6th 3 Numbers Correct\n' +
+  '    positions:\n' +
+  '      - 5\n' +
+  '      - 6\n' +
+  '      - 7\n' +
+  '    level: 5\n' +
+  '    positionalValue: true\n' +
+  '    matchingCount: 3\n' +
+  '    prize: 1000.00  #1,000.00\n' +
+  '\n' +
+  '  - rule: 4th 4 Numbers Correct\n' +
+  '    positions:\n' +
+  '      - 2\n' +
+  '      - 3\n' +
+  '      - 4\n' +
+  '      - 5\n' +
+  '    level: 5\n' +
+  '    positionalValue: true\n' +
+  '    matchingCount: 4\n' +
+  '    prize: 1000.00  #1,000.00\n' +
+  '\n' +
+  '  - rule: 6th 2 Numbers Correct\n' +
+  '    positions:\n' +
+  '      - 6\n' +
+  '      - 7\n' +
+  '    level: 6\n' +
+  '    positionalValue: true\n' +
+  '    matchingCount: 2\n' +
+  '    prize: 100.00  #100.00\n' +
+  '\n' +
+  '  - rule: 3th 3 Numbers Correct\n' +
+  '    positions:\n' +
+  '      - 2\n' +
+  '      - 3\n' +
+  '      - 4\n' +
+  '    level: 6\n' +
+  '    positionalValue: true\n' +
+  '    matchingCount: 3\n' +
+  '    prize: 100.00  #1,00.00\n' +
+  '\n' +
+  '  - rule: 2th 2 Numbers Correct\n' +
+  '    positions:\n' +
+  '      - 2\n' +
+  '      - 3\n' +
+  '    level: 7\n' +
+  '    positionalValue: true\n' +
+  '    matchingCount: 2\n' +
+  '    prize: 50.00  #50.00\n' +
+  '\n' +
+  '  - rule: 6th Number Correct\n' +
+  '    positions:\n' +
+  '      - 7\n' +
+  '    level: 8\n' +
+  '    positionalValue: true\n' +
+  '    matchingCount: 1\n' +
+  '    prize: 20.00  #20.00\n' +
+  '\n' +
+  '  - rule: Letter Correct\n' +
+  '    positions:\n' +
+  '      - 1\n' +
+  '    level: 8\n' +
+  '    positionalValue: true\n' +
+  '    matchingCount: 1\n' +
+  '    prize: 20.00  #20.00\n' +
+  '\n';
 
   ngOnInit(): void {
-    console.log(this.data);
+
   }
 
   onHighlight(e) {
@@ -31,6 +180,10 @@ export class ConfigViewerComponent implements OnInit {
       top: '{...}',
       value: '{...}'
     };
+  }
+
+  openDialog() {
+    this.dialog.open(ConfigPopUpDialogViewerComponent);
   }
 
 }
