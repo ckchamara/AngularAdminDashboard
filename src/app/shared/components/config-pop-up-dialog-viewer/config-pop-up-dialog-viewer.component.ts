@@ -13,15 +13,10 @@ export class ConfigPopUpDialogViewerComponent implements OnInit {
 
   url = 'ftp://192.168.229.81/Projects/lottoservice/src/config' + this.router.url;
 
-
   ngOnInit(): void {
     this.changeHtmlElementById('url', this.url);
-    this.changeHtmlElementById('title', 'FTP Configuration File path For ' + this.router.url.replace('/', ''));
+    this.changeHtmlElementById('title', 'FTP Configuration File For ' + this.router.url.replace('/', ''));
 
-  }
-
-  copyUrl() {
-    // this.clipboard.writeText(this.url);
   }
 
   changeHtmlElementById(lbl, val) {

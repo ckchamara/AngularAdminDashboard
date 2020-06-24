@@ -1,7 +1,4 @@
 <script src="../../shared/shared.module.ts"></script>
-<div>
-  <app-lotto-config-header></app-lotto-config-header>
-</div>
 
 <div>
   <img id="image" src="assets/govisetha.png" alt="mahajana_sampatha">
@@ -14,6 +11,14 @@
 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="15px" class="stats-cards">
   <app-lotto-enter (myEvent)="app.showResult()" [lotteryOptions]="lotteryOptions" style="width: 50%"></app-lotto-enter>
   <app-lotto-result #app style="width: 50%"></app-lotto-result>
+</div>
+
+<br>
+<mat-divider></mat-divider>
+<br>
+
+<div>
+  <app-config-viewer></app-config-viewer>
 </div>
 
 <br>
