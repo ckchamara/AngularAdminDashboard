@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-config-pop-up-dialog-viewer',
@@ -7,19 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfigPopUpDialogViewerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {
+  }
+
+  url = 'ftp://192.168.229.81/Projects/lottoservice/src/config' + this.router.url;
+
 
   ngOnInit(): void {
+    this.changeHtmlElementById('url', this.url);
+    this.changeHtmlElementById('title', 'FTP Configuration File path For ' + this.router.url.replace('/', ''));
+
   }
 
-   myFunction() {
-    const copyText = document.getElementById('myInput') as HTMLInputElement;
-    copyText.select();
-    document.execCommand('copy');
-  }
-
-  setFtpUrl() {
-    document.getElementById('');
+  copyUrl() {
+    // this.clipboard.writeText(this.url);
   }
 
   changeHtmlElementById(lbl, val) {
